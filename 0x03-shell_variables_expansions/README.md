@@ -14,3 +14,4 @@ This folder contains the following scripts:
 13-print_float - print two decimal places
 12-combinations - printing combinations
 100-decimal_to_hexadecimal - as in name
+101-rot13 - encode and decode text using the rot13 encryption
