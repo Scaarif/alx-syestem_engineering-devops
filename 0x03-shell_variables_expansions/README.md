@@ -6,3 +6,4 @@ This folder contains the following scripts:
 4-global_variables - list environmental variables
 5-local_variable - list environmental, local variables and functions
 6-create_local_variable - create a local variable
+7-create_global_variable - create a global variable
