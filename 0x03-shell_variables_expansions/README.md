@@ -12,3 +12,5 @@ This folder contains the following scripts:
 10-love_exponent_breath - LOVE ** BREATH
 11-binary_to_decimal - convert binary to decimal
 printing combinations
+13-print_float - print two decimal places
+12-combinations - printing combinations
