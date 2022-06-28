@@ -11,3 +11,4 @@ This folder contains the following scripts:
 9-divide_and_rule - divide two env variables
 10-love_exponent_breath - LOVE ** BREATH
 11-binary_to_decimal - convert binary to decimal
+printing combinations
