@@ -10,3 +10,4 @@ This folder contains the following scripts:
 8-true_knowledge - add 128 to a variable trueknowledge
 9-divide_and_rule - divide two env variables
 10-love_exponent_breath - LOVE ** BREATH
+11-binary_to_decimal - convert binary to decimal
