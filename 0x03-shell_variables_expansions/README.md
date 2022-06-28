@@ -15,3 +15,4 @@ This folder contains the following scripts:
 12-combinations - printing combinations
 100-decimal_to_hexadecimal - as in name
 101-rot13 - encode and decode text using the rot13 encryption
+102-odd - print every other line from input starting with the first line
