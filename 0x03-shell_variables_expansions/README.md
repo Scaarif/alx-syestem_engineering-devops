@@ -5,3 +5,4 @@ This folder contains the following scripts:
 3-paths - count number of directories in PATH
 4-global_variables - list environmental variables
 5-local_variable - list environmental, local variables and functions
+6-create_local_variable - create a local variable
