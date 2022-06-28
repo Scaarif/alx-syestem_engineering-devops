@@ -9,3 +9,4 @@ This folder contains the following scripts:
 7-create_global_variable - create a global variable
 8-true_knowledge - add 128 to a variable trueknowledge
 9-divide_and_rule - divide two env variables
+10-love_exponent_breath - LOVE ** BREATH
