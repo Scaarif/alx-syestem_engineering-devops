@@ -1,1 +1,1 @@
-Shell basics and Devops
+Shell scripts and DevOps
