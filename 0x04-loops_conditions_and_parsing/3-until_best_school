@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Displays 'Best School' 1o times using until (loop)
+
+count=10
+# until functions the opposite of while;
+# it runs while a test is false and stops when it turns true
+until [ $count -lt 1 ]
+do
+	echo 'Best School'
+	count=$(( count - 1 ))
+done

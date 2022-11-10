@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Loops 10 times, displaying a different string based on iteration
+# iter 4: displays "bad luck"
+# iter 8: displays "good luck"
+# all other iters: displays "Best School"
+
+iter=1
+
+while [ $iter -le 10 ]
+do
+	if [ $iter -eq 4 ]
+	then
+		echo "bad luck"
+	elif [ $iter -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi #endif
+	iter=$(( iter + 1 ))
+done

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Displays numbers 1 - 20 and a string:
+# "bad luck from China" if number == 4
+# "bad luck from Japan" if number == 9
+# "bad luck from Italy" if number == 17
+# uses case (condition in place of if, elif else)
+
+iter=1
+
+
+while [ $iter -le 20 ]
+do
+	echo $iter
+	case $iter in
+	4)
+		echo "bad luck from China";;
+	9)
+		echo "bad luck from Japan";;
+	17)
+		echo "bad luck from Italy";;
+esac
+	iter=$(( iter + 1))
+done
