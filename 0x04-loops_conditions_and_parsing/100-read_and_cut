@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Displays part of the content of the file /etc/password:
+# the username, user id & Home directory path for the user
+
+# get a line of /etc/passwd content, redirected to the loop
+# read gets the next line per iteration until no more lines are found
+# in which case the loop terminates (read returns an non-0  status)
+while read -r line
+do
+	# print only the required content i.e. the first, 3rd and 6th fields
+	echo "$line" | cut -d':' -f1,3,6
+done </etc/passwd

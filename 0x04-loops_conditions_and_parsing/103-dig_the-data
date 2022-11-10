@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Displays the visitor IP along with the HTTP status code from
+# the Apache log file using awk & sorts the data
+
+awk 'BEGIN { FS = " " }; { print $1, $9 }' apache-access.log | sort -b | uniq -c | sort -b 
