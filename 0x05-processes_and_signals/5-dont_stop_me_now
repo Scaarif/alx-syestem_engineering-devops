@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Stops the script 4-to_infinity_and_boyond using kill
+
+# look up 4-to_infinity... & send to it, the kill signal
+kill "$(ps -aux | pgrep -f 4-to_infinity_and_beyond)"

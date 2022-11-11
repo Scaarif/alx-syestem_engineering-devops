@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Manages the manage_my_process process:
+# Starts the process if "start" argument passed:
+
+file=/var/run/my_process.pid
+
+start_p() {
+    ./manage_my_process &
+    echo $$ > $file
+}
+
+stop_p() {
+    rm /var/run/my_process.pid
+    pkill -of manage_my_process
+}
+
+# check that {start|stop|restart} args are passed and no other
+has_arg_1() {
+    if [ "$CMD" == "start" ]; then
+	start_p
+	echo "manage_my_process started"
+    elif [ "$CMD" == "stop" ]; then
+	stop_p
+	echo "manage_my_process stopped"
+    elif [ "$CMD" == "restart" ]; then
+	stop_p
+	start_p
+	echo "manage_my_process restarted"
+    fi
+}
+# if no args are passed ($# == 0), display usage message
+if [ $# -gt 0 ]; then
+    CMD="$1"
+    has_arg_1
+else
+    echo "Usage: manage_your_process {start|stop|restart}"
+fi

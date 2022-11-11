@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Displays the string "To infinity and beyond" indefinitely
+# sleeps for 2 secs in between each iteration of the loop
+
+# the infinite loop
+while 'true'
+do
+	echo "To infinity and beyond"
+	# sleeo for 2 sec?
+	sleep 2
+done

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Stops the script 7-highlander:
+# cannot use kill or killall
+
+# send a kill signal (pkill default) to 7-highlander i.e. kill it
+pkill -f 7-highlander

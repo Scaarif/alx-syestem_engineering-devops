@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Displays lines containing the bash word
+# uses the previous (./1-list_your_processes) command
+
+# run the previous command and only display processes containing bash
+
+./1-list_your_processes | grep bash

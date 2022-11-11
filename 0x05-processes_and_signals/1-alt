@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Diplays a list of currently running processes
+
+# get the processes and print them one by one
+processes="$(ps -Ao user,pid,pcpu,pmem,vsz,rss,tty,stat,start_time,time,comm)"
+# loop through the processes and display them, one at a time
+for process in "$processes"
+do
+	echo "$process" # display a process in processes
+done

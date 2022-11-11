@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Stops the script 7-highlander:
+
+# send a kill signal (sigkill) to 7-highlander i.e. kill it
+kill -9 "$(pgrep -f 7-highlander)"
