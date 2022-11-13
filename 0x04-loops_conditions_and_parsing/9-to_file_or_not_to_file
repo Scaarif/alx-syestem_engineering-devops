@@ -14,11 +14,11 @@ then
 # if true (not empty), check that its a regular file
 	else
 		echo "school file is empty"
-	fi #endif (file state case - empty or not)
+	fi #endif (file state - empty or not)
 	if [ -f $file ]
 	then
 		echo "school is a regular file"
-	fi #endif (file type case)
+	fi #endif (file type)
 else
 	echo "school file does not exist"
-fi #endif (existence case)
+fi #endif (existence)
