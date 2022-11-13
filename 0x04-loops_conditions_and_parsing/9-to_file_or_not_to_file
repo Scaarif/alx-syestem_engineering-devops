@@ -7,18 +7,18 @@ file="school"
 if [ -e $file ]
 then
 	echo "school file exist"
-# if true, check that its not empty
-	if [ -s $file ]
-	then
-		echo "school file is not empty"
-# if true (not empty), check that its a regular file
-	else
-		echo "school file is empty"
-	fi #endif (file state - empty or not)
+# if true (not exists), check that its a regular file
 	if [ -f $file ]
 	then
 		echo "school is a regular file"
 	fi #endif (file type)
+	# if true (exists), check that its not empty
+	if [ -s $file ]
+	then
+		echo "school file is not empty"
+	else
+		echo "school file is empty"
+	fi #endif (file state - empty or not)
 else
 	echo "school file does not exist"
 fi #endif (existence)
