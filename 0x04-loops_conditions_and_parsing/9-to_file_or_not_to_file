@@ -6,7 +6,7 @@ file="school"
 # check that the file exists
 if [ -e $file ]
 then
-	echo "school file exist"
+	echo "school file exists"
 # if true (not exists), check that its a regular file
 	if [ -f $file ]
 	then
