@@ -3,4 +3,4 @@
 # the PID and name of the program to which each socket belongs
 
 # Display sockets infor
-netstat -a
+netstat -lp # listening sockets and PID
