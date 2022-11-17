@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Listens on port 98 on localhost
+
+# listen to localhost (port) 98 using Netcat command (nc)
+nc -l localhost 98

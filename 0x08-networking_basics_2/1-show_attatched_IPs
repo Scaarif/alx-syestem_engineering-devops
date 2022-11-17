@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Displays all active IPv4 IPs on the machine it's executed on
+
+# run ifconfig -a to get all interfaces info then sieve to get just the IPv4 IPs (preceeded by inet -> then address)
+ifconfig -a | grep inet | awk '!/^[0-9]*: ?lo|link\/ether/ {print $2}' | grep '^[0-9]' | cut -d/ -f1
