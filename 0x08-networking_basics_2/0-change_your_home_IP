@@ -4,11 +4,11 @@
 # Note: Configuration is Docker conscious
 
 file=~/hosts.temp
-cp /etc/hosts $file
+sudo cp /etc/hosts $file
 
 # change localhost IP resolution
 sed -i -e "$a\\n127.0.0.2\t127.0.0.1" $file
 # change facebook IP resolution
 sed -i -e "$a\\n8.8.8.8\tfacebook.com\n" $file
 
-cp -f $file /etc/hosts
+sudo cp -f $file /etc/hosts
