@@ -1,0 +1,4 @@
+Host myServer
+	HostName 83517-web-01
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
