@@ -12,4 +12,4 @@ sudo ufw allow 'Nginx HTTP'
 # configure (use defaults), just replace index.html's contents
 echo "Hello World!" | sudo tee /var/www/html/index.html
 # once done, restart nginx to enable the changes
-sudo service nginx reload
+sudo service nginx restart
