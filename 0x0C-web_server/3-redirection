@@ -10,4 +10,4 @@ sudo ufw allow 'Nginx HTTP'
 echo "Hello World!" | sudo tee /var/www/html/index.html
 sudo sed -i '37i\rewrite ^/redirect_me https://www.youtube.con/watch?v=QH2-TGULwu4 permanent;' /etc/nginx/sites-available/default 
 # once done, restart nginx to enable the changes
-sudo service nginx reload
+sudo service nginx restart

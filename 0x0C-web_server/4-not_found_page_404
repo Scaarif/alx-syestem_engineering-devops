@@ -9,4 +9,4 @@ sudo apt-get -y install nginx
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/error_404.html
 sudo sed -i '38i\error_page 404 /error_404.html;' /etc/nginx/sites-available/default 
 # once done, restart nginx to enable the changes
-sudo service nginx reload
+sudo service nginx restart
