@@ -8,6 +8,6 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 # Alter index.html contents & Redirect (301)
 echo "Hello World!" | sudo tee /var/www/html/index.html
-sudo sed -i '37i\rewrite ^/redirect_me https://www.youtube.con/watch?v=QH2-TGULwu4 permanent;' /etc/nginx/sites-available/default 
+sudo sed -i '53i\rewrite ^/redirect_me https://www.youtube.con/watch?v=QH2-TGULwu4 permanent;' /etc/nginx/sites-available/default 
 # once done, restart nginx to enable the changes
 sudo service nginx restart
