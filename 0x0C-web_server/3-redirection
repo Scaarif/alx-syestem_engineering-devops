@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Install and configure Nginx server (in remote server) to:
+# Redirect permanently (301) /redirect_me to another page
+
+# Update apt-get (first time use) and Install Nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+# Alter index.html contents & Redirect (301)
+echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo sed -i '37i\rewrite ^/redirect_me https://www.youtube.con/watch?v=QH2-TGULwu4 permanent;' /etc/nginx/sites-available/default 
+# once done, restart nginx to enable the changes
+sudo service nginx reload
