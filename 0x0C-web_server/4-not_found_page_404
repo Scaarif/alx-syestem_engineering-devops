@@ -6,6 +6,7 @@
 # Update apt-get (first time use) and Install Nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 echo "Hello World!" | sudo tee /var/www/html/index.html
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/error_404.html
 sudo sed -i '38i\error_page 404 /error_404.html;' /etc/nginx/sites-enabled/default 
