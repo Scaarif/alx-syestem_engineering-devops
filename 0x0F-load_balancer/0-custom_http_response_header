@@ -11,5 +11,7 @@ sudo ufw allow 'Nginx HTTP'
 
 # configure (use defaults), just replace index.html's contents
 echo "Hello World!" | sudo tee /var/www/html/index.html
+# add a custom header, X-Served-By: server/hostname
+sudo sed -i '49i\add_header X-Served-By "83517-web-02";' /etc/nginx/sites-available/default
 # once done, restart nginx to enable the changes
 sudo service nginx restart

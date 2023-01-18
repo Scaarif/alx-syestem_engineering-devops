@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Installs and configures HAproxy on '1b-01' server with the following requirements:
+# 	send traffic to web-01 and web-02
+#	is manageable via an init script (i.e. via service ...)
+
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+# enable management via init script (done via setting the ENABLED variable value to 1)
+sudo sed -i 's/ENABLED=*/EBABLED=1/' /etc/default/haproxy
+# configure load balancing between web-01 and web-02 using roundrobin
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.orig
+sudo sed -i '$a\{whatever changes}' etc/haproxy/haproxy.cfg
