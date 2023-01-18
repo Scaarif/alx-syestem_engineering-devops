@@ -5,10 +5,8 @@
 
 sudo apt-get -y update
 sudo apt-get -y install haproxy
-# enable management via init script (done via setting the ENABLED variable value to 1)
-sudo sed -i 's/ENABLED=*/EBABLED=1/' /etc/default/haproxy
 # configure load balancing between web-01 and web-02 using roundrobin
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.orig
-sudo sed -i '$a\\nfrontend nginx-apps\n bind *:80\n mode http\n default_backend nginx\nbackend nginx\n mode http\n balance roundrobin\n server 83517-web-01 54.82.173.163\n server 83517-web-02 18.210.20.118\n' etc/haproxy/haproxy.cfg
+sudo echo "\nfrontend nginx-apps\n\tbind *:80\n\tmode http\n\tdefault_backend nginx\nbackend nginx\n\tmode http\n\tbalance roundrobin\n\tserver 83517-web-01 54.82.173.163 check\n\tserver 83517-web-02 18.210.20.118 check" >>  etc/haproxy/haproxy.cfg
 # restart server once configured for changes to take effect
 sudo service haproxy restart

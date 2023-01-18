@@ -51,7 +51,7 @@ file { 'Nginx default config file':
         index index.html index.htm index.nginx-debian.html;
         server_name _;
         location / {
-		add_header X-Served-By "\"$HOSTNAME\"";
+		add_header X-Served-By "$HOSTNAME";
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
                 try_files \$uri \$uri/ =404;
