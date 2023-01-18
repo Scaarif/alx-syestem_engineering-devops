@@ -2,14 +2,16 @@
 
 # update packages
 exec {'update':
-  command => 'sudo apt-get -y update',
-  before  => Exec['install nginx'],
+  provider => shell,
+  command  => 'sudo apt-get -y update',
+  before   => Exec['install nginx'],
 }
 
 # install nginx
 exec {'install nginx':
-  command => 'sudo apt-get -y install nginx',
-  before  => Exec['add_header'],
+  provider => shell,
+  command  => 'sudo apt-get -y install nginx',
+  before   => Exec['add_header'],
 }
 
 # add custom header in configuration
@@ -22,5 +24,6 @@ exec { 'add_header':
 
 # restart nginx once done with configuration
 exec { 'restart nginx':
+  provider => shell,
   command  => 'sudo service nginx restart',
 }
