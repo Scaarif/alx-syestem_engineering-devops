@@ -4,7 +4,6 @@
 #		must distribute the load among 2 servers, wen-01 and -02 using roundrobin 
 
 apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.6
 apt-get -y update
 apt-get -y install haproxy
 
