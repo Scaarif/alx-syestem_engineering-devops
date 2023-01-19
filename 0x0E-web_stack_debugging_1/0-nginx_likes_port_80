@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Automate fixing an issue keeping an nginx server installation from listeming on port 80
+# Requirements:
+#	nginx must be running and listening on port 80 of all the server's active IPV4 IPs
+
+# kill all nginx running processes
+nginx_processes=$(pgrep nginx)
+kill -9 "$nginx_processes"
+# replace /etc/nginx/sites-enabled with etc/nginx/sites-available (contains the config to listen to port 80 as default)
+sudo cp /etc/nginx/sites-available /etc/nginx/sites-enabled
+# restart nginx (done with changes)
+service nginx restart
