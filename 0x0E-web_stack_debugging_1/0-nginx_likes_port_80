@@ -7,6 +7,6 @@
 nginx_processes=$(pgrep nginx)
 kill -9 "$nginx_processes"
 # replace /etc/nginx/sites-enabled with etc/nginx/sites-available (contains the config to listen to port 80 as default)
-sudo cp /etc/nginx/sites-available /etc/nginx/sites-enabled
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 # restart nginx (done with changes)
 service nginx restart
