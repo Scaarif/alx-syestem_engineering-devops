@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Automate fixing an issue keeping an nginx server installation from listeming on port 80
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx start
-kill -9 "$(pgrep nginx)"
+service nginx restart
+kill "$(pgrep nginx)"
