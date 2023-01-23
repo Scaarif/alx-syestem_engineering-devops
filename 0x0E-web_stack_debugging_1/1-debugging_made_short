@@ -2,4 +2,4 @@
 # Automate fixing an issue keeping an nginx server installation from listeming on port 80
 kill -9 "$(pgrep nginx)"
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
+service nginx start
