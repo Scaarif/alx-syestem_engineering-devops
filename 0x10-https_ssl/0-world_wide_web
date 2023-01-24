@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Displays the information about subdomains (as configured in your domain zone)
+# Requirements:
+#	Accepts 2 arguments (domain and subdomain(optional)) and returns information about them
+# 	Must use 'awk' and at least 1 function
+
+# define the function
+# shellcheck disable=SC2066
+subdomains() {
+	if [ $# -eq 1 ]
+	then
+		# print info about all the 4 subdomains (www, lb-1, web-01 & web-02)
+		for sub_d in www lb-01 web-01 web-02
+		do
+			dig $sub_d.$1 | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v sub_d=$sub_d '{print "The subdomain " sub_d " is a " $4 " record and points to " $5}'
+		done
+	elif [ $# -eq 2 ]
+	then
+		# print info about the specific subdomain
+		local subd=$2
+		dig $2.$1 | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v sub_d=$subd '{print "The subdomain "  sub_d  " is a " $4 " record and points to " $5}'
+	fi
+}
+
+# call the function with the arguments
+if [ $# -eq 1 ]
+then
+	subdomains $1
+elif [ $# -eq 2 ]
+then
+	subdomains $1 $2
+fi
