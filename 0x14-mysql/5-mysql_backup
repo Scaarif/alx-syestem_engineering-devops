@@ -6,6 +6,6 @@
 #	the user must be root and the script accepts one arg (the password to be used to connect to the database)
 
 # dump all databases into backup.sql
-mysqldump -uroot -p"$1" --all-databases backup.sql
+mysqldump -uroot -p"$1" --all-databases > backup.sql
 # compress into a tar.zip file
 tar -cvzf "$(date +%d-%m-%Y)".tar.gz ./backup.sql
