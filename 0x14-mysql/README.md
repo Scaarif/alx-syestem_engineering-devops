@@ -1,1 +1,2 @@
-#MySQL_Replication\nAll about MySQL_Replication
+#MySQL Replication
+All about database (MySQL) Replication
