@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Configures a container so that nginx runs as 'nginx' user & listens on all active IPs on port 8080
+# (can't use apt-get remove)
+
+# change/set user to 'nginx'
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+# ensure nginx is listening to port 8080 (instead of 80)
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+chmod 644 /etc/nginx/nginx.conf
+# kill apache2 so nginx can start
+kill "$(pgrep apache2)"
+# run nginx as nginx
+sudo -u nginx service nginx start
