@@ -8,6 +8,6 @@ sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
 sed -i "s/80/8080/g" /etc/nginx/sites-available/default
 chmod 644 /etc/nginx/nginx.conf
 # kill apache2 so nginx can start
-kill "$(pgrep apache2)"
+kill "$(pgrep apache2 | head -1)"
 # run nginx as nginx
 sudo -u nginx service nginx start
