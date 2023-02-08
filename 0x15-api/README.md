@@ -1,1 +1,2 @@
-#REST_APIs\nAll about REST_APIs
+#REST APIs
+All about RESTFUL APIs: which are essentially APIs that utilize HTTP Request-Responses & its Client-Server model-like style.
