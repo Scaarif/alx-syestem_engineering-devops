@@ -18,14 +18,14 @@ if __name__ == '__main__':
         todos = requests.get(api + 'todos')
         # print(user.json().get('name'))
         user_todos = []
-        completed = 0
+        total = 0
         todos = todos.json()
         for todo in todos:
             if todo.get('userId') == int(sys.argv[1]):
-                user_todos.append(todo)
+                total += 1
                 if todo.get('completed'):
-                    completed += 1
+                    user_todos.append(todo)
         print('Employee {} is done with tasks({}/{}):'
-              .format(user.json().get('name'), completed, len(user_todos)))
+              .format(user.json().get('name'), len(user_todos), total))
         for todo in user_todos:
             print('\t {}'.format(todo.get('title')))
