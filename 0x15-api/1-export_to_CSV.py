@@ -21,7 +21,7 @@ if __name__ == '__main__':
         # print(user_todos)
         file_name = '{}.csv'.format(sys.argv[1])
         with open(file_name, 'w', newline='') as f:
-            writer = csv.writer(f, delimiter=',')
+            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for todo in user_todos:
                 row = []
                 row.extend([sys.argv[1], user.json().get('name')])
