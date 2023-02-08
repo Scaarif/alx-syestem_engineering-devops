@@ -12,7 +12,7 @@ if __name__ == '__main__':
     # get the data
     if len(sys.argv) > 1:
         api = 'https://jsonplaceholder.typicode.com/'
-        user = requests.get(api + 'users{}'.format(sys.argv[1]))
+        user = requests.get(api + 'users/{}'.format(sys.argv[1]))
         todos = requests.get(api + 'todos')
         user_todos = []
         for todo in todos.json():
@@ -24,7 +24,7 @@ if __name__ == '__main__':
             writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for todo in user_todos:
                 row = []
-                row.extend([sys.argv[1], user.json().get('name')])
+                row.extend([sys.argv[1], user.json().get('username')])
                 row.extend([todo.get('completed'), todo.get('title')])
                 writer.writerow(row)
     else:
