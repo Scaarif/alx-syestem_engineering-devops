@@ -1,1 +1,2 @@
-#wordpress_LAMP_debugging\nAll about wordpress_LAMP_debugging
+#Wordpress(LAMP)debugging
+All about web satck debugging, focusing on wordpress(a LAMP stack)
