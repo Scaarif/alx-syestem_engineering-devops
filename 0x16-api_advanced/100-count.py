@@ -18,9 +18,7 @@ def count_words(subreddit, word_list):
     headers = {'User-Agent': 'APIadvanced/1.0.0'}
 
     r = requests.get(url, headers=headers, allow_redirects=False)
-    if (r.status_code == 404 or 'data' not in r.json()):
-        return None
-    else:
+    try:
         while (1):
             r = r.json()
             for post in r['data']['children']:
@@ -34,6 +32,8 @@ def count_words(subreddit, word_list):
                 break
             r = requests.get("{}?after={}".format(url, after),
                              headers=headers, allow_redirects=False)
+    except Exception:
+        pass
 
     words = [(k, words[k]) for k in
              sorted(words, key=words.get, reverse=True)]
@@ -41,6 +41,7 @@ def count_words(subreddit, word_list):
     if len(words) == 0:
         print("")
     else:
+        w_list = [word.lower() for word in word_list]
         for k, v in words:
             if (v > 0):
-                print("{}: {:d}".format(k, v))
+                print("{}: {:d}".format(k, v * w_list.count(k)))
