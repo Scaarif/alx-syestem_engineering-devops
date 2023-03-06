@@ -1,1 +1,2 @@
-#Application_Servers\nAll about Application_Servers
+#Application Servers (Gunicorn)
+All about Application Servers - software applicaions (servers) that serve dynamic data to web applications.
